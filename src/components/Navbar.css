@@ -1,0 +1,9 @@
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #2B3844;
+    width: 100%;
+    box-sizing: border-box;
+    position: static;
+}
