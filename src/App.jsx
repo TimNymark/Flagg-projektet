@@ -13,7 +13,7 @@ import CountryCard, { allCountrysLoader } from "./components/CountryCard";
 
 //Pages
 import HomePage from "./pages/HomePage";
-import CountryPage from "./pages/CountryPage";
+import CountryPage, {countryDetailsLoader} from "./pages/CountryPage";
 
 //layout
 import RootLayout from "./layouts/RootLayout";
@@ -21,7 +21,7 @@ import RootLayout from "./layouts/RootLayout";
 const routesFromElements = createRoutesFromElements(
   <Route path="/" element={<RootLayout />}>
     <Route index element={<HomePage />} loader={allCountrysLoader} />
-    <Route path=":id" element={<CountryPage />}  />
+    <Route path=":name" element={<CountryPage />}  loader={countryDetailsLoader}/>
   </Route>
 );
 const router = createBrowserRouter(routesFromElements);

@@ -15,10 +15,10 @@ const CountryCard = () => {
   });
 
   return (
-    <div className="card">
+    <div className="country-cards">
       {sortedCountries.map((country) => {
         return (
-          <Link className= "country-cards" to="/">
+          <Link className= "country-card" to={country.name.common} key={country.name.common}>
             <img src={country.flags.svg} alt="flag" />
             <div className="card-information">
               <h3>{country.name.common}</h3>

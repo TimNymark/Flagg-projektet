@@ -1,6 +1,17 @@
-.card{
+.country-cards{
     display: flex;
     flex-wrap: wrap;
     flex-direction: row;
-    width: 20px;
+    gap: 20px 20px;
+}
+
+.country-card{
+    display: block;
+    background-color: #2B3844;
+    width: 300px;
+}
+
+.card-information {
+    
+
 }
