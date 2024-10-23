@@ -8,10 +8,15 @@
 .country-card{
     display: block;
     background-color: #2B3844;
-    width: 300px;
+    width: 400px;
 }
 
 .card-information {
-    
-
+    padding: 16px;
+    align-items: flex-start;
 }
+
+.country-card img {
+    width: 400px;
+    object-fit: cover;
+  } 

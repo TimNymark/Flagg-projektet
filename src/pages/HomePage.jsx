@@ -1,17 +1,20 @@
+import { useLoaderData } from "react-router-dom";
 import CountryCard, { allCountrysLoader } from "../components/CountryCard"
-import Search from "../components/Serch"
+import Search from "../components/Search"
 
 import "./Homepage.css";
 
-const HomePage = () => {
+const HomePage = ({ setResults, results }) => {
+    const allCountries = useLoaderData();
+
     return (
-        <div>
+        <div className= "homepage-wrapper">
             <div className="container-search-dropdown">
-                <Search/>
+                <Search setResults={setResults} countries={allCountries} />
                 <div>Region</div>
             </div>
             <div>
-                <CountryCard />
+                <CountryCard countries={results}/>
             </div>
         </div>
      

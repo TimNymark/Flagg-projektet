@@ -18,15 +18,19 @@ import CountryPage, {countryDetailsLoader} from "./pages/CountryPage";
 //layout
 import RootLayout from "./layouts/RootLayout";
 
+
+
+function App() {
+const [results, setResults] = useState([])
+
 const routesFromElements = createRoutesFromElements(
   <Route path="/" element={<RootLayout />}>
-    <Route index element={<HomePage />} loader={allCountrysLoader} />
-    <Route path=":name" element={<CountryPage />}  loader={countryDetailsLoader}/>
+    <Route index element={<HomePage setResults={setResults} results={results}/>} loader={allCountrysLoader} />
+    <Route path="/country/:nameOrCode" loader={countryDetailsLoader} element={<CountryPage />} />
   </Route>
 );
 const router = createBrowserRouter(routesFromElements);
 
-function App() {
   return (
     <div className="App">
       <RouterProvider router={router} />

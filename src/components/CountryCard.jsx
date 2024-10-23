@@ -1,11 +1,10 @@
 import {Link, useLoaderData } from "react-router-dom";
 import "./CountryCard.css";
 
-const CountryCard = () => {
-  const countryCard = useLoaderData();
-  console.log({ countryCard });
+const CountryCard = ({countries}) => {
 
-  const sortedCountries = countryCard.sort((a, b) => {
+
+  const sortedCountries = countries.sort((a, b) => {
     const nameA = a.name.common.toUpperCase();
     const nameB = b.name.common.toUpperCase();
 
@@ -14,11 +13,20 @@ const CountryCard = () => {
     return 0; // Names are equal
   });
 
+  if (sortedCountries.length === 0) {
+    return (
+      <div className="no-results">
+        <Link to="/">Back</Link>
+        <p>Could not find that country!</p>
+      </div>
+    );
+  }
+
   return (
     <div className="country-cards">
       {sortedCountries.map((country) => {
         return (
-          <Link className= "country-card" to={country.name.common} key={country.name.common}>
+            <Link className= "country-card" to={`/country/${country.cca3}`} key={country.cca3}>
             <img src={country.flags.svg} alt="flag" />
             <div className="card-information">
               <h3>{country.name.common}</h3>
@@ -27,6 +35,7 @@ const CountryCard = () => {
               <p>Capital: {country.capital}</p>
             </div>
           </Link>
+        
         );
       })}
     </div>

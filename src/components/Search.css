@@ -1,0 +1,18 @@
+.input-wrapper{
+    background-color: #2B3844;
+    width: 300px;
+    border-radius: 10px;
+    height: 2.5rem;
+    padding: 10px 15px;
+    display: flex;
+    align-items: center;
+}
+
+input {
+    background-color: transparent;
+    border: none;
+    height: 100%;
+    font-size: 1.25rem;
+    width: 100%;
+    margin-left: 5px;
+}
