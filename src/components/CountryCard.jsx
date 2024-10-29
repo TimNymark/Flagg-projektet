@@ -13,15 +13,6 @@ const CountryCard = ({countries}) => {
     return 0; // Names are equal
   });
 
-  if (sortedCountries.length === 0) {
-    return (
-      <div className="no-results">
-        <Link to="/">Back</Link>
-        <p>Could not find that country!</p>
-      </div>
-    );
-  }
-
   return (
     <div className="country-cards">
       {sortedCountries.map((country) => {
@@ -29,10 +20,10 @@ const CountryCard = ({countries}) => {
             <Link className= "country-card" to={`/country/${country.cca3}`} key={country.cca3}>
             <img src={country.flags.svg} alt="flag" />
             <div className="card-information">
-              <h3>{country.name.common}</h3>
-              <p>Population: {country.population}</p>
-              <p>Region: {country.region}</p>
-              <p>Capital: {country.capital}</p>
+              <h3 className="country-name">{country.name.common}</h3>
+              <p className="country-information">Population: {country.population}</p>
+              <p className="country-information">Region: {country.region}</p>
+              <p className="country-information">Capital: {country.capital}</p>
             </div>
           </Link>
         

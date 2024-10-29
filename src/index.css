@@ -1,5 +1,16 @@
 :root {
   color: rgba(255, 255, 255, 0.87);
   background-color: #202C36; 
+  font-family: "Open Sans", serif;
 }
 
+header{
+  max-width: 100%;
+  margin: 0 auto;
+}
+
+
+main {
+  max-width: 1200px;
+  margin: 0px auto;
+}

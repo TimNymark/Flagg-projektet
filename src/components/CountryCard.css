@@ -8,15 +8,34 @@
 .country-card{
     display: block;
     background-color: #2B3844;
-    width: 400px;
+    width: 264px;
+    border-radius: 0px 0px 10px 10px;
+    text-decoration: none;
+    margin-right: 20px;
 }
 
 .card-information {
     padding: 16px;
     align-items: flex-start;
+    color: #F2F2F2;
+    font-style: normal; 
 }
 
 .country-card img {
-    width: 400px;
+    width: 100%;
     object-fit: cover;
+    height: 140px;
+    border-radius: 10px 10px 0px 0px;
   } 
+
+.country-name{
+    font-weight: 500px;
+    font-size: 1rem;
+    margin: 0px 0px 10px 0px;
+}
+
+  .country-information{
+    font-weight: 400;
+    margin: 0;
+    font-size: 0.875rem;
+  }

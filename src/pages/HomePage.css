@@ -7,4 +7,20 @@
 .container-search-dropdown {
     display: flex;
     justify-content: space-between;
+    margin-bottom: 30px;
+}
+
+.back-button{
+    color: #F2F2F2;
+    background-color: transparent; 
+    border: none;
+    cursor: pointer; 
+    display: flex;
+    align-items: center; 
+}
+
+.back-arrow {
+    margin-right: 8px; /* Adds space between the image and the text */
+    width: 16px; /* Adjust width as necessary */
+    height: 16px; /* Adjust height as necessary */
 }

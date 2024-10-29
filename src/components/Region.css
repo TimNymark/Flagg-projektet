@@ -1,0 +1,25 @@
+
+
+/* Style the select dropdown */
+#region-select {
+  background-color: #202C36; 
+  color: #F2F2F2; 
+  padding: 16.5px 14px; 
+  border-radius: 4px; 
+  border: 2px solid #2B3844; 
+  font-size: 1rem; 
+  cursor: pointer;
+  width: 178px;
+}
+
+/* Add a hover effect */
+#region-select:hover {
+  border: 1px solid #F2F2F2;
+}
+
+/* Style the dropdown options */
+#region-select option {
+  background-color: #2B3844; 
+  color: #F2F2F2; 
+}
+
