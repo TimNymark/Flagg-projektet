@@ -27,7 +27,7 @@ const [results, setResults] = useState([])
 const routesFromElements = createRoutesFromElements(
   <Route path="/" element={<RootLayout />}>
     <Route index element={<HomePage setResults={setResults} results={results}/>} loader={allCountrysLoader} />
-    <Route path="/country/:nameOrCode" loader={countryDetailsLoader} element={<CountryPage />} />
+    <Route path="/country/:code" loader={countryDetailsLoader} element={<CountryPage />} />
   </Route>
 );
 const router = createBrowserRouter(routesFromElements);

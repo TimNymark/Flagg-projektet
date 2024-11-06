@@ -60,7 +60,7 @@ img{
     align-items: center;
 }
 
-.tiltle-border{
+.title-border{
     margin-right: 10px;
 }
 
@@ -76,3 +76,24 @@ padding-right: 12px;
 border-radius: 25px;
 background-color: #2B3844;
 }
+
+
+/* skeleton style */
+
+.skeleton-flag-country{
+    width: 544px;
+    height: 272px;
+    background-color: #2B3844;
+    border-radius: 10px;
+}
+
+.country-skeleton-information-wrapper{
+    display: flex;
+    align-items: center;
+}
+
+.skeleton-country-title {
+    width: 100%;
+    height: 16px;
+    margin-bottom: 10px;
+  }
