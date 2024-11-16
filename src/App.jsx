@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import "./App.css";
 import {
   createBrowserRouter,
@@ -13,24 +13,43 @@ import CountryCard, { allCountrysLoader } from "./components/CountryCard";
 
 //Pages
 import HomePage from "./pages/HomePage";
-import CountryPage, {countryDetailsLoader} from "./pages/CountryPage";
+import CountryPage, { countryDetailsLoader } from "./pages/CountryPage";
 
 //layout
 import RootLayout from "./layouts/RootLayout";
 
-
-
-
 function App() {
-const [results, setResults] = useState([])
+  const [results, setResults] = useState([]);
+  const [isDarkMode, setIsDarkMode] = useState(true);
 
-const routesFromElements = createRoutesFromElements(
-  <Route path="/" element={<RootLayout />}>
-    <Route index element={<HomePage setResults={setResults} results={results}/>} loader={allCountrysLoader} />
-    <Route path="/country/:code" loader={countryDetailsLoader} element={<CountryPage />} />
-  </Route>
-);
-const router = createBrowserRouter(routesFromElements);
+  const toggleDarkLightMode = () => {
+    setIsDarkMode(!isDarkMode);
+  };
+
+  const routesFromElements = createRoutesFromElements(
+    <Route
+      path="/"
+      element={
+        <RootLayout
+          isDarkMode={isDarkMode}
+          toggleDarkLightMode={toggleDarkLightMode}
+        />
+      }
+    >
+      <Route
+        index
+        element={<HomePage setResults={setResults} results={results} isDarkMode={isDarkMode}/>}
+        loader={allCountrysLoader}
+      />
+      <Route
+        path="/country/:code"
+        loader={countryDetailsLoader}
+        element={<CountryPage isDarkMode={isDarkMode}/>}
+      />
+      {/* <Route path="*" element={<NotFound />} /> */}
+    </Route>
+  );
+  const router = createBrowserRouter(routesFromElements);
 
   return (
     <div className="App">

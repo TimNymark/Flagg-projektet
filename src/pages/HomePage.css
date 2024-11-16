@@ -1,17 +1,23 @@
 .homepage-wrapper{
-    margin-top: 100px;
+    
+    margin-left: auto;
+    margin-right: auto;
 }
 
-
-
+@media (min-width: 900px) {
+    .homepage-wrapper{
+        max-width: 1200px;       
+    }
+}
 .container-search-dropdown {
     display: flex;
     justify-content: space-between;
     margin-bottom: 30px;
 }
 
+
+
 .back-button{
-    color: #F2F2F2;
     background-color: transparent; 
     border: none;
     cursor: pointer; 
@@ -20,7 +26,20 @@
 }
 
 .back-arrow {
-    margin-right: 8px; /* Adds space between the image and the text */
-    width: 16px; /* Adjust width as necessary */
-    height: 16px; /* Adjust height as necessary */
+    margin-right: 8px; 
+    width: 16px; 
+    height: 16px; 
+}
+
+@media (min-width: 900px) {
+    .homepage-wrapper{
+        max-width: 1200px;       
+    }
+}
+
+@media (max-width: 900px) {
+    .container-search-dropdown{
+        justify-content: flex-start;
+        flex-direction: column;
+    }
 }

@@ -1,25 +1,131 @@
-
-
-/* Style the select dropdown */
-#region-select {
-  background-color: #202C36; 
-  color: #F2F2F2; 
-  padding: 16.5px 14px; 
-  border-radius: 4px; 
-  border: 2px solid #2B3844; 
-  font-size: 1rem; 
-  cursor: pointer;
+.dropdownWrapper {
+  position: relative;
+  display: inline-block;
   width: 178px;
 }
 
-/* Add a hover effect */
-#region-select:hover {
-  border: 1px solid #F2F2F2;
+.region-placeholder {
+  position: absolute;
+  top: 25%;
+  transform: translateY(-50%);
+  color: #888;
+  font-size: 1rem;
+  pointer-events: none;
+  transition: all 0.2s ease;
+  margin-left: 10px;
 }
 
-/* Style the dropdown options */
-#region-select option {
-  background-color: #2B3844; 
-  color: #F2F2F2; 
+.arrow {
+  position: absolute;
+  top: 50%;
+  left: 150px;
+  transform: translateY(-50%);
+  font-size: 1rem;
+  pointer-events: none;
+  transition: transform 0.3s ease;
 }
 
+.region-select {
+  display: flex;
+  align-items: center;
+  background-color: inherit;
+  border-radius: 4px;
+  font-size: 1rem;
+  cursor: pointer;
+  width: 100%;
+  height: 56px;
+  font-family: "Open Sans", serif;
+  padding-left: 12px;
+  box-sizing: border-box;
+}
+
+.region-select.dark {
+  border: 1px solid #2b3844;
+}
+
+.region-select.light {
+  border: 1px solid #2b384480;
+}
+
+.region-select.dark:hover {
+  border: 1px solid #f2f2f2;
+}
+
+.region-select.light:hover {
+  border: 1px solid #2b3844;
+}
+
+.region-select:focus {
+  border: 1px solid #f2f2f2;
+}
+
+.dropdown {
+  position: absolute;
+  left: 0;
+  width: 100%;
+  background-color: #2b3844;
+  border-radius: 4px;
+  margin-top: 4px;
+  overflow-y: auto;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  z-index: 1000;
+}
+
+.dropdown.dark {
+  background-color: #2b3844;
+  color: #f2f2f2;
+}
+
+.dropdown.light {
+  background-color: #f2f2f2;
+  color: #2b3844;
+  border-radius: none;
+}
+
+.dropdown-item {
+  padding: 5px 10px;
+  cursor: pointer;
+  font-family: "Open Sans", serif;
+}
+
+.dropdown-item:hover {
+  background-color: #888;
+}
+
+.region-placeholder.focused {
+  top: -12px;
+  left: 0px;
+  font-size: 12px;
+  color: #f2f2f2b3;
+  padding: 0px 3px;
+}
+
+.region-placeholder.focused.dark {
+  background-color: #202c36;
+}
+
+.region-placeholder.focused.light {
+  background-color: white;
+  color: #202c36b3;
+}
+
+.arrow-dark.dark {
+  display: none;
+}
+
+.arrow-light.light {
+  display: none;
+}
+
+.arrow.rotate {
+  transform: translateY(-50%) rotate(180deg);
+}
+
+@media only screen and (max-width: 900px) {
+  .dropdownWrapper {
+    width: 50%;
+  }
+  .arrow{
+  left: 90%;
+  }
+}

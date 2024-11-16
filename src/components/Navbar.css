@@ -1,36 +1,92 @@
-.navbar-container{
-    width: 100%;
-    background-color: #2B3844;
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    
+.navbar-container {
+  box-shadow: rgba(0, 0, 0, 0.2) 0px 2px 4px -1px,
+    rgba(0, 0, 0, 0.14) 0px 4px 5px 0px, rgba(0, 0, 0, 0.12) 0px 1px 10px 0px;
+  margin-bottom: 32px;
+  background-color: #2b3844;
+  width: 100%;
+  margin-left: auto;
+  box-sizing: border-box;
+  margin-right: auto;
+  display: block;
+  padding: 0px 24px;
+}
+
+
+.navbar-container.dark {
+  background-color: #2b3844;
+  color: #f2f2f2;
+}
+
+.navbar-container.light {
+  background-color: #f2f2f2;
+  color: black;
 }
 
 .navbar {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    background-color: #2B3844;
-    width: 1200px;
-    margin: 0px auto
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  margin: 0px auto;
+  box-sizing: border-box;
+  height: 64px;
 }
 
-.dark-mode-button{
-    background-color: transparent; 
-    border: none;
-    display: flex;
-    align-items: center;
-    gap: 5px;
-    color: #F2F2F2; 
-    font-weight: 400;
-    font-size: 1rem;
-    transition: background-color 0.3s ease;
+.navbar-banner{
+  font-weight: 600;
 }
 
-.dark-mode-button:hover{
-    cursor: pointer; 
-    background-color: rgba(242, 242, 242, 0.1); 
-    border-radius: 4px;
+.dark-mode-button {
+  background-color: transparent;
+  border: none;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  color: inherit;
+  font-weight: 400;
+  font-size: 1rem;
+  transition: background-color 0.3s ease;
+}
+
+.dark-mode-button:hover {
+  cursor: pointer;
+  background-color: rgba(242, 242, 242, 0.1);
+  border-radius: 4px;
+}
+
+.dark-moon.light {
+  display: none;
+}
+
+.light-moon.dark {
+  display: none;
+}
+.logo{
+  display: none;
+}
+
+.dark-logo{
+  display: none;
+}
+
+
+
+
+.logo.light {
+  display: none;
+}
+
+.dark-logo.dark {
+  display: none;
+}
+@media only screen and (min-width: 900px){
+  .navbar{
+    max-width: 1200px;
+  }
+  .logo {
+    display: block;
+}
+  .dark-logo{
+  display: block;
+}
 }

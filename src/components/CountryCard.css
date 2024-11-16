@@ -1,87 +1,193 @@
-.country-cards{
-    display: flex;
-    flex-wrap: wrap;
-    flex-direction: row;
-    gap: 20px 20px;
-    
+.country-cards {
+  display: flex;
+  flex-flow: wrap;
+  margin-top: -32px;
+  width: calc(100% + 32px);
+  margin-left: -32px;
+  row-gap: 32px;
 }
 
-.country-card{
-    display: block;
-    width: 264px;
-    text-decoration: none;
-    margin-right: 20px;
-    background-color: #2B3844;
-    border-radius: 10px 
+.countryCardWrapper {
+  padding-top: 32px;
+  padding-left: 32px;
+  -webkit-box-flex: 0;
+  flex-grow: 0;
+  box-sizing: border-box;
+  flex-basis: 25%;
+  max-width: 25%;
+}
+
+.country-card {
+  display: block;
+  text-decoration: none;
+  border-radius: 5px;
+  box-shadow: 2px 2px 2px 1px rgb(0 0 0 / 20%);
+  max-width: 345px;
+  overflow: hidden;
+  
+}
+
+.country-card.dark {
+  background-color: #2b3844;
+  color: #f2f2f2;
+}
+
+.country-card.dark h3 {
+  color: #f2f2f2;
+}
+
+.country-card.light {
+  background-color: #f2f2f2;
+}
+
+.country-card.light h3 {
+  color: black;
+}
+
+.country-card.light p {
+  color: #2b3844cc;
 }
 
 .card-information {
-    padding: 16px;
-    align-items: flex-start;
-    color: #F2F2F2;
-    font-style: normal; 
+  padding: 16px;
+  align-items: flex-start;
+  font-style: normal;
+}
+
+.card-information.light {
+  background-color: white;
 }
 
 .country-card img {
-    width: 100%;
-    object-fit: cover;
-    height: 140px;
-    border-radius: 10px 10px 0px 0px;
-  } 
-
-.country-name{
-    font-weight: 500px;
-    font-size: 1rem;
-    margin: 0px 0px 10px 0px;
+  width: 100%;
+  object-fit: cover;
+  height: 140px;
+  border-radius: 5px 5px 0px 0px;
 }
 
-  .country-information{
-    font-weight: 400;
-    margin: 0;
-    font-size: 0.875rem;
+.country-name {
+  font-weight: 500px;
+  font-size: 1rem;
+  margin: 0px 0px 10px 0px;
+}
+
+.country-information {
+  font-weight: 400;
+  margin: 0;
+  font-size: 0.875rem;
+  color: #f2f2f2b3;
+}
+
+/* skeleton style */
+
+.skeleton-card {
+  border-radius: 8px;
+}
+
+.skeleton-flag {
+  width: 100%;
+  height: 150px;
+  border-radius: 4px 4px 0px 0px;
+}
+
+.skeleton-flag.dark {
+  background-color: #444c56;
+}
+
+.skeleton-flag.light {
+  background-color: #f2f2f2b3;
+}
+
+.skeleton-info-wrap {
+  display: flex;
+  align-items: baseline;
+  gap: 0px;
+  margin: 0px;
+}
+
+.skeleton-title {
+  width: 100%;
+  height: 16px;
+  border-radius: 4px;
+  margin-bottom: 5px;
+}
+
+.skeleton-title.dark {
+  background-color: #444c56;
+}
+
+.skeleton-title.light {
+  background-color: #f2f2f2;
+}
+
+.skeleton-country-text {
+  width: 85px;
+  height: 10px;
+  border-radius: 4px;
+  margin-left: 5px;
+}
+
+#population-text{
+  width: 60px;
+}
+
+.skeleton-country-text.light {
+  background-color: #f2f2f2;
+}
+
+.skeleton-country-text.dark {
+  background-color: #444c56;
+}
+
+.skeleton-flag,
+.skeleton-country-text,
+.skeleton-title {
+  animation: shimmer 1.5s infinite linear;
+}
+
+@keyframes shimmer {
+  0% {
+    opacity: 1;
   }
 
-  .skeleton-card {
-    background-color: #2B3844;
-    border-radius: 8px;
-  }
-  
-  .skeleton-flag {
-    width: 100%;
-    height: 150px;
-    background-color: #444c56;
-    border-radius: 4px 4px 0px 0px;
-  }
-  
-  .skeleton-info-wrap{
-    display: flex;
-    align-items: baseline;
-    gap: 0px;
-    margin:0px;
+  50% {
+    opacity: 0.4;
   }
 
-  .skeleton-text {
-    width: 50%;
-    height: 10px;
-    background-color: #444c56;
-    border-radius: 4px;
+  100% {
+    opacity: 1;
   }
-  
-  .skeleton-text.title {
-    width: 100%;
-    height: 16px;
-    margin-bottom: 10px;
+}
+
+@media only screen and (max-width: 1200px){
+  .countryCardWrapper{
+    flex-basis: 33%;
+    -webkit-box-flex: 0;
+    flex-grow: 0;
+    max-width: 33%;
   }
-  
-  .skeleton-card, .skeleton-flag, .skeleton-text {
-    animation: shimmer 1.5s infinite linear;
+}
+
+
+@media only screen and (max-width: 900px){
+  .country-cards{
+        flex-direction: column;
+        align-content: center;
   }
-  
-  @keyframes shimmer {
-    0% {
-      background-position: -200px 0;
-    }
-    100% {
-      background-position: 200px 0;
-    }
+  .countryCardWrapper{
+    flex-basis: 50%;
+    -webkit-box-flex: 0;
+    flex-grow: 0;
+    max-width: 50%;
   }
+}
+
+
+@media only screen and (max-width: 600px){
+  .countryCardWrapper{
+    flex-basis: 100%;
+    -webkit-box-flex: 0;
+    flex-grow: 0;
+    max-width: 100%;
+  }
+}

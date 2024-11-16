@@ -1,12 +1,14 @@
 import { Outlet } from "react-router-dom"
 import Navbar from "../components/Navbar";
+import React from "react";
+import "./RootLayout.css";
 
+const RootLayout = ({isDarkMode, toggleDarkLightMode}) => {
 
-const RootLayout = () => {
     return(
-       <div className="root-layout">
+       <div className={`root-layout ${isDarkMode ? 'dark' : 'light'}`}>
         <header>
-        <Navbar/>
+        <Navbar isDarkMode={isDarkMode} toggleDarkLightMode={toggleDarkLightMode}/>
         </header>
         <main>
             <Outlet />

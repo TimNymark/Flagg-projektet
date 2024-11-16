@@ -6,7 +6,7 @@ import { useState, useEffect } from "react";
 import "./Homepage.css";
 import backArrow from '../assets/arrow-left.svg';
 
-const HomePage = () => {
+const HomePage = ({isDarkMode}) => {
   const allCountries = useLoaderData(); // Fetch all countries initially
   const [filteredCountries, setFilteredCountries] = useState(allCountries); // Holds the final filtered countries for display
   const [region, setRegion] = useState("All"); // Tracks selected region
@@ -48,10 +48,10 @@ const HomePage = () => {
       ) : (
         <>
           <div className="container-search-dropdown">
-            <Search setSearchTerm={setSearchTerm} /> {/* Pass down setSearchTerm */}
-            <Region setRegion={setRegion} /> {/* Pass down setRegion */}
+            <Search setSearchTerm={setSearchTerm} isDarkMode={isDarkMode} />
+            <Region setRegion={setRegion} isDarkMode={isDarkMode} />
           </div>
-          <CountryCard countries={filteredCountries} />
+          <CountryCard countries={filteredCountries} isDarkMode={isDarkMode}/>
         </>
       )}
     </div>

@@ -2,25 +2,27 @@ import { Link, useLoaderData, useNavigation } from "react-router-dom";
 import { useState, useEffect } from "react";
 import "./CountryCard.css";
 
-const SkeletonLoader = () => {
+const SkeletonLoader = ({ isDarkMode }) => {
   return (
-    <div className="country-cards">
-      {[...Array(12)].map((_, index) => (
-        <div className="country-card skeleton-card" key={index}>
-          <div className="skeleton-flag"></div>
-          <div className="card-information">
-            <div className="skeleton-text title"></div>
-            <div className="skeleton-info-wrap">
-              <p className="country-information">Population: </p>
-              <div className="skeleton-text"></div>
-            </div>
-            <div className="skeleton-info-wrap">
-              <p className="country-information">Region: </p>
-              <div className="skeleton-text"></div>
-            </div>
-            <div className="skeleton-info-wrap">
-              <p className="country-information">Capital: </p>
-              <div className="skeleton-text"></div>
+    <div className="country-cards" >
+      {[...Array(12)].map((_, i) => (
+        <div key={i} className="countryCardWrapper">
+          <div className={`country-card skeleton-card ${isDarkMode ? "dark" : "light"}`}>
+            <div className={`skeleton-flag ${isDarkMode ? "dark" : "light"}`}></div>
+            <div className={`card-information ${isDarkMode ? "dark" : "light"}`}>
+              <div className={`skeleton-title ${isDarkMode ? "dark" : "light"}`}></div>
+              <div className="skeleton-info-wrap">
+                <p className="country-information">Population: </p>
+                <div  id="population-text" className={`skeleton-country-text ${isDarkMode ? "dark" : "light"}`}></div>
+              </div>
+              <div className="skeleton-info-wrap">
+                <p className="country-information">Region: </p>
+                <div className={`skeleton-country-text ${isDarkMode ? "dark" : "light"}`}></div>
+              </div>
+              <div className="skeleton-info-wrap">
+                <p className="country-information">Capital: </p>
+                <div className={`skeleton-country-text ${isDarkMode ? "dark" : "light"}`}></div>
+              </div>
             </div>
           </div>
         </div>
@@ -29,7 +31,7 @@ const SkeletonLoader = () => {
   );
 };
 
-const CountryCard = ({ countries }) => {
+const CountryCard = ({ countries, isDarkMode }) => {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
@@ -42,7 +44,7 @@ const CountryCard = ({ countries }) => {
     return () => clearTimeout(timer);
   }, []);
 
-  if (loading) return <SkeletonLoader />;
+  if (loading) return <SkeletonLoader isDarkMode={isDarkMode} />;
 
   const sortedCountries = countries.sort((a, b) => {
     const nameA = a.name.common.toUpperCase();
@@ -57,21 +59,24 @@ const CountryCard = ({ countries }) => {
     <div className="country-cards">
       {sortedCountries.map((country) => {
         return (
-          <Link
-            className="country-card"
-            to={`/country/${country.cca3}`}
-            key={country.cca3}
-          >
-            <img src={country.flags.svg} alt="flag" />
-            <div className="card-information">
-              <h3 className="country-name">{country.name.common}</h3>
-              <p className="country-information">
-                Population: {country.population}
-              </p>
-              <p className="country-information">Region: {country.region}</p>
-              <p className="country-information">Capital: {country.capital}</p>
-            </div>
-          </Link>
+          <div className="countryCardWrapper" key={country.cca3}>
+            <Link
+              className={`country-card ${isDarkMode ? "dark" : "light"}`}
+              to={`/country/${country.cca3}`}
+            >
+              <img src={country.flags.svg} alt="flag" />
+              <div className="card-information">
+                <h3 className="country-name">{country.name.common}</h3>
+                <p className="country-information">
+                  Population: {country.population}
+                </p>
+                <p className="country-information">Region: {country.region}</p>
+                <p className="country-information">
+                  Capital: {country.capital}
+                </p>
+              </div>
+            </Link>
+          </div>
         );
       })}
     </div>
