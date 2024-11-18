@@ -17,5 +17,5 @@ För att få godkänt måste min inlämning stämma överens med dessa punkter:
 - [x] Användaren kan växla mellan light och dark mode via navbaren.
 - [x] När data laddas in i appen visas ett loading state för användaren.
 - [x] Användaren kan navigera genom appen med hjälp av routes. D.v.s. användaren kan skriva i URL:en för att hoppa mellan de olika sidorna i appen.
-- [ ] Jag har deployat mitt projekt. En länk till projektet finns i links.md.
-- [ ] Jag har laddat upp mitt projekt på Github. En länk till projektet finns i links.md.
+- [x] Jag har deployat mitt projekt. En länk till projektet finns i links.md.
+- [x] Jag har laddat upp mitt projekt på Github. En länk till projektet finns i links.md.

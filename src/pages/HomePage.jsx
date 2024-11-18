@@ -3,7 +3,7 @@ import CountryCard from "../components/CountryCard";
 import Search from "../components/Search";
 import Region from "../components/Region";
 import { useState, useEffect } from "react";
-import "./Homepage.css";
+import "./HomePage.css";
 import backArrow from '../assets/arrow-left.svg';
 import backArrowDark from "../assets/arrow-left-dark.svg";
 
