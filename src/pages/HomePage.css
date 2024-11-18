@@ -16,7 +16,6 @@
 }
 
 
-
 .back-button{
     background-color: transparent; 
     border: none;
@@ -25,10 +24,14 @@
     align-items: center; 
 }
 
-.back-arrow {
-    margin-right: 8px; 
-    width: 16px; 
-    height: 16px; 
+.back-button p{
+    font-size: 600;
+}
+
+.back-arrow{
+    margin-right: 8px;
+    width: 15px;
+    height: 20px;
 }
 
 @media (min-width: 900px) {

@@ -32,19 +32,11 @@ const SkeletonLoader = ({ isDarkMode }) => {
 };
 
 const CountryCard = ({ countries, isDarkMode }) => {
-  const [loading, setLoading] = useState(true);
+  const navigation = useNavigation();
 
-  useEffect(() => {
-    // Fake loading state for 3 seconds
-    const timer = setTimeout(() => {
-      setLoading(false);
-    }, 3000); // 3000ms = 3 seconds
-
-    // Clean up timer when component unmounts
-    return () => clearTimeout(timer);
-  }, []);
-
-  if (loading) return <SkeletonLoader isDarkMode={isDarkMode} />;
+  if (navigation.state === "loading") {
+    return <SkeletonLoader isDarkMode={isDarkMode} />;
+  }
 
   const sortedCountries = countries.sort((a, b) => {
     const nameA = a.name.common.toUpperCase();
@@ -52,7 +44,7 @@ const CountryCard = ({ countries, isDarkMode }) => {
 
     if (nameA < nameB) return -1;
     if (nameA > nameB) return 1;
-    return 0; // Names are equal
+    return 0; // 
   });
 
   return (

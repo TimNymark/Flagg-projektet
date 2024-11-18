@@ -49,26 +49,21 @@
   width: 10px;
 }
 
-.back-button-wrapper {
-  box-sizing: border-box;
-  display: flex;
-  flex-flow: row wrap;
-  width: 100%;
-}
+
 
 .back-button {
-  background-color: transparent;
+  background-color: transparent; 
   border: none;
-  cursor: pointer;
+  cursor: pointer; 
   display: flex;
-  align-items: center;
+  align-items: center; 
   text-decoration: none;
 }
 
-.back-button-wrapper {
-  width: 1em;
-  height: 1em;
+.back-button a{
+  text-decoration: none;
 }
+
 
 .back-button.dark {
   color: #f2f2f2;
@@ -86,6 +81,9 @@
 
 .back-arrow.light {
   display: none;
+  margin-right: 8px; 
+  width: 16px; 
+  height: 16px; 
 }
 
 .back-arrow-dark.dark {
@@ -109,8 +107,8 @@
   overflow-x: auto;
   max-width: 100%;
   margin-left: 16px;
-  scrollbar-width: thin; /* For modern browsers */
-  scrollbar-color: #888 transparent; /* Optional: Customize scrollbar */
+  scrollbar-width: thin; 
+  scrollbar-color: #888 transparent; 
 }
 
 /* For WebKit browsers (like Chrome, Safari) */

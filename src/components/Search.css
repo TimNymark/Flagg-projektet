@@ -9,6 +9,7 @@
   left: 10px;
   transform: translateY(-50%);
   transition: all 0.2s ease;
+  color: #f2f2f2b3;
 }
 
 .input-placeholder.dark{
@@ -25,7 +26,7 @@
 }
 
 .search-input {
-  width: 370px;
+  width: 320px;
   padding: 16.5px 14px;
   font-size: 16px;
   border-radius: 4px;
@@ -35,10 +36,12 @@
 
 .search-input.dark {
   border: 1px solid #2b3844;
+  color: #f2f2f2b3;
 }
 
 .search-input.light {
   border: 1px solid #888;
+  color: #2b3844;
 }
 
 
