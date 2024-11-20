@@ -3,6 +3,7 @@
   display: block;
   margin-left: auto;
   margin-right: auto;
+  padding-bottom: 160px;
 }
 .country-card-divider {
   display: flex;
