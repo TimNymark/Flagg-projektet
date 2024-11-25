@@ -2,13 +2,14 @@
 .root-layout {
     min-height: 100vh;
     transition: background-color 0.3s ease, color 0.3s ease;
-    
+    padding-bottom: 160px;
   }
   
   /* Dark mode styles */
   .root-layout.dark {
     background-color: #202C36;
     color: #f2f2f2;
+    
   }
   
   /* Light mode styles */

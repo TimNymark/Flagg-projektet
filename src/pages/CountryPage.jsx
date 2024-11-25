@@ -4,7 +4,7 @@ import "./CountryPage.css";
 import backArrow from "../assets/arrow-left.svg";
 import backArrowDark from "../assets/arrow-left-dark.svg";
 
-const SkeletonLoader = ({ isDarkMode }) => {
+const SkeletonLoaderCountryPage = ({ isDarkMode }) => {
   return (
     <div className="country-card-wrapper">
       <div className="back-button-wrapper">
@@ -109,7 +109,7 @@ const CountryPage = ({ isDarkMode }) => {
   const navigation = useNavigation();
 
   if (navigation.state === "loading") {
-    return <SkeletonLoader isDarkMode={isDarkMode} />;
+    return <SkeletonLoaderCountryPage isDarkMode={isDarkMode} />;
   }
 
   return (
