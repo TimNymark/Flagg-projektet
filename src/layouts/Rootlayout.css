@@ -8,11 +8,11 @@
   /* Dark mode styles */
   .root-layout.dark {
     background-color: #202C36;
-    color: white;
+    color: #f2f2f2;
   }
   
   /* Light mode styles */
   .root-layout.light {
-    background-color: white;
+    background-color: #f2f2f2;
     color: #2B3844;
   }

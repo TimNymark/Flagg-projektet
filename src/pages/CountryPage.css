@@ -45,11 +45,15 @@
   font-weight: 600;
 }
 
+.country-information-text-result {
+  font-weight: 300;
+}
+
+
 .chip-border-countries {
   padding: 10px;
   width: 10px;
 }
-
 
 
 .back-button {
@@ -135,6 +139,7 @@
   padding-left: 12px;
   padding-right: 12px;
   border-radius: 25px;
+  font-family: "Open Sans", serif;
 }
 
 .chips.dark {

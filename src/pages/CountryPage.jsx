@@ -145,33 +145,33 @@ const CountryPage = ({ isDarkMode }) => {
             <div className="country-information-divider">
               <div className="country-information-box">
                 <p className="country-information-text">
-                  Population: {country.population}
+                  Population: <span className="country-information-text-result">{country.population}</span>
                 </p>
                 <p className="country-information-text">
-                  Region: {country.region}
+                  Region: <span className="country-information-text-result">{country.region}</span>
                 </p>
                 <p className="country-information-text">
-                  Capital: {country.capital}
+                  Capital: <span className="country-information-text-result">{country.capital}</span>
                 </p>
                 <p className="country-information-text">
                   Native name:{" "}
                   {country.name.nativeName ? (
-                    <span>
+                    <span className="country-information-text-result">
                       {Object.values(country.name.nativeName)[0].common}
                     </span>
                   ) : (
-                    <span>Not available</span>
+                    <span className="country-information-text-result">Not available</span>
                   )}
                 </p>
               </div>
               <div className="country-information-box">
                 <p className="country-information-text">
-                  Top Level Domain: {country.tld}
+                  Top Level Domain: <span className="country-information-text-result">{country.tld}</span>
                 </p>
                 <p className="country-information-text">
                   Currencies:{" "}
                   {country.currencies ? (
-                    <span>{Object.values(country.currencies)[0].name}</span>
+                    <span className="country-information-text-result">{Object.values(country.currencies)[0].name}</span>
                   ) : (
                     <span>Not available</span>
                   )}
@@ -179,7 +179,7 @@ const CountryPage = ({ isDarkMode }) => {
                 <p className="country-information-text">
                   Language:{" "}
                   {country.languages ? (
-                    <span>{Object.values(country.languages)[0]}</span>
+                    <span className="country-information-text-result">{Object.values(country.languages)[0]}</span>
                   ) : (
                     <span>Not available</span>
                   )}
